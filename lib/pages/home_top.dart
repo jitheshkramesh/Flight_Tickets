@@ -1,3 +1,5 @@
+import 'package:flight_tickets/pages/flight_listing.dart';
+
 import '../pages/custom_shape_clipper.dart';
 import 'package:flutter/material.dart';
 
@@ -123,9 +125,18 @@ class _HomeTopState extends State<HomeTop> {
                             suffix: Material(
                               elevation: 2.0,
                               borderRadius: BorderRadius.circular(20.0),
-                              child: Icon(
-                                Icons.search,
-                                color: Colors.black,
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              FlightListing()));
+                                },
+                                child: Icon(
+                                  Icons.search,
+                                  color: Colors.black,
+                                ),
                               ),
                             )),
                       ),
